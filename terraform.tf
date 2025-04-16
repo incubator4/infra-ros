@@ -8,6 +8,9 @@ terraform {
 }
 
 provider "routeros" {
-
+  hosturl  = var.MIKROTIK_HOST
+  username = var.MIKROTIK_USER
+  password = var.MIKROTIK_PASSWORD
+  insecure = var.MIKROTIK_INSECURE
   # Configuration options
 }
