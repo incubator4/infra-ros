@@ -1,8 +1,9 @@
 resource "routeros_interface_pppoe_client" "chinanet" {
-  name              = "chinanet"
-  interface         = routeros_interface_ethernet.ether1.name
-  user              = var.CHINANET_USERNAME
-  password          = var.CHINANET_PASSWORD
+  name      = "chinanet"
+  interface = routeros_interface_ethernet.ether1.name
+  user      = var.CHINANET_USERNAME
+  password  = var.CHINANET_PASSWORD
+
   use_peer_dns      = true
   add_default_route = true
 
