@@ -35,3 +35,8 @@ resource "routeros_ip_route" "check_chinanet" {
 #   routing_table = routeros_routing_table.chinaunicom.name
 #   check_gateway = "ping"
 # }
+
+resource "routeros_ip_route" "yunhui" {
+  gateway     = "10.10.0.2"
+  dst_address = "192.168.100.0/24"
+}

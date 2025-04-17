@@ -28,3 +28,9 @@ resource "routeros_ip_address" "chinanet" {
   address   = "192.168.1.20/24"
   network   = "192.168.1.0"
 }
+
+resource "routeros_ip_address" "wg" {
+  interface = routeros_interface_wireguard.wg.name
+  address   = "10.10.0.1/24"
+  network   = "10.10.0.0"
+}

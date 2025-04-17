@@ -28,3 +28,11 @@ resource "routeros_ip_firewall_mangle" "ipv4" {
   # new_mss       = "1130"
   # tcp_mss       = "1301-65535"
 }
+
+resource "routeros_ip_firewall_filter" "wg" {
+  action   = "accept"
+  chain    = "input"
+  dst_port = routeros_interface_wireguard.wg.listen_port
+  protocol = "udp"
+  comment  = "Allow WireGuard traffic"
+}
